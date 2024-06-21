@@ -423,7 +423,6 @@ function draw() {
       updateScore();
 
       if (score == 10010) {
-        gameOver = true;
         displayWinMenu();
         wonMusic.play();
       }
