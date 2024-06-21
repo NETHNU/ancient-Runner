@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <audio id="gameAudio" loop>
+        <source src="backgrouund.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    <script src="game.js"></script>
+    <script>
+        // Function to set volume for game audio
+        function setGameVolume(volume) {
+            const gameAudio = document.getElementById('gameAudio');
+            gameAudio.volume = volume;
+        }
+
+        // Retrieve volume from localStorage if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const storedVolume = localStorage.getItem('volume');
+            if (storedVolume !== null) {
+                setGameVolume(storedVolume);
+            }
+        });
+    </script>
+</body>
+</html>
